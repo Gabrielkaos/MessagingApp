@@ -1,0 +1,25 @@
+{% extends "chat_app/base.html" %}
+
+{% block content%}
+    <div class="chat-container">
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="user-input">
+            <input type="text" id="messageInput" name="user_message" placeholder="Type your message...">
+            <button type="button" id="sendButton" onclick="sendMessage()">Send</button>
+
+        </div>
+    </div>
+
+    {% load static %}
+
+    <script src="{% static 'chat_app/js/chat.js'%}"></script>  
+    <script>
+        document.getElementById("messageInput").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Prevent form submission or newline in textarea
+                document.getElementById("sendButton").click();
+            }
+        });
+        
+    </script>  
+{% endblock content%}
