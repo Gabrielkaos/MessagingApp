@@ -8,8 +8,8 @@ function sendMessage() {
     }
 
     var userMessage = document.createElement('div');
-    userMessage.className = 'user-message';
-    userMessage.innerText = '> '+message;
+    userMessage.className = 'user-message chat-bubble';
+    userMessage.innerText = message;
     chatMessages.appendChild(userMessage);
 
 
@@ -17,15 +17,16 @@ function sendMessage() {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
-            // 'X-CSRFToken': getCookie('csrftoken'),
+            'X-CSRFToken': getCookie('csrftoken'),
         },
         body: JSON.stringify({ user_message: message }),
     })
     .then(response => response.json())
     .then(data => {
         var chatbotMessage = document.createElement('div');
-        chatbotMessage.className = 'response-message';
+        chatbotMessage.className = 'response-message chat-bubble';
         chatbotMessage.innerText = data.response;
+        // alert(data.response);
         chatMessages.appendChild(chatbotMessage);
 
         messageInput.value = '';

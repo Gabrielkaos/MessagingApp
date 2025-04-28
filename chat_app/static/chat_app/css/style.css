@@ -24,12 +24,22 @@ body {
     background-color: #fff;
 }
 
+.chat-bubble {
+    max-width: 300px;
+    min-width: 50px;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: .5em;
+}
+
 .user-message {
+    margin-left: auto;
     text-align: right;
     margin-bottom: 8px;
 }
 
 .response-message {
+    margin-right: auto;
     text-align: left;
     margin-bottom: 8px;
 }
