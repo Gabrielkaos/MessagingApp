@@ -8,8 +8,40 @@
     <title>Ask JulAi</title>
 </head>
 <body>
-    {% block content %}
-    {% endblock content %}
+    <div class="container">
+        <div class="item">
+            <div class="ai-title">
+                <h1>JulAI</h1>
+                <img class="ai-image" src="{% static 'chat_app/img/smiling.png' %}">
+            </div>
+            
+
+        </div>
+
+
+        <div class="item">
+            
+            {% block content %}
+            {% endblock content %}
+        </div>
+
+        <div class="item">
+            <button>
+                ReTrain
+            </button>
+            <button>
+                Add Message - Response
+            </button>
+        </div>
+      </div>
+    <!-- <div  class="wrapper">
+        <div class="ai-image-container">
+            <img>
+        </div>
+        
+    </div> -->
+   
+    
     
 </body>
 </html>

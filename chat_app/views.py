@@ -98,7 +98,7 @@ def response(request):
     """
     data = json.loads(request.body)
     sentence = data.get('user_message')
-    # print("sentence:",sentence)
+    # print("sentence:",___sentence)
     tokens = tokenize(sentence)
 
     stems = [stem(w) for w in tokens]

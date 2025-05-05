@@ -1,35 +1,98 @@
+:root{
+    --font-all: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --background-color:rgb(209, 209, 209);
+    --chat-background:#fff;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(209, 209, 209);
+  }
+  
+
+  .item:nth-child(1) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .item:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  .item:nth-child(3) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+    border-left: 2px solid #333;
+  }
+
+.item .ai-image{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    /* margin-left: auto; */
+}
+.ai-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    margin-left: auto;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family:var(--font-all);
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f2f2f2;
+    background-color: var(--background-color);
 }
 
 .chat-container {
     width: 400px;
-    height: 600px;
-    border: 1px solid #ccc;
+    height: 610px;
+    border: 1px solid #cccbcb;
     border-radius: 8px;
     overflow: hidden;
+    border: 1px solid #333;
+    background-color: var(--chat-background);
 }
 
 .chat-messages {
     padding: 10px;
     height: 530px;
     overflow-y: scroll;
-    background-color: #fff;
+    background-color: var(--chat-background);
 }
 
 .chat-bubble {
+    background-color: rgba(99, 99, 233, 0.6);
     max-width: 300px;
     min-width: 50px;
     padding: 10px;
     border: 1px solid #333;
-    border-radius: .5em;
+    border-radius: .8em;
 }
 
 .user-message {
@@ -48,8 +111,17 @@ body {
     display: flex;
     align-items: center;
     padding: 10px;
-    background-color: #f2f2f2;
+    background-color: var(--chat-background);
+    margin-bottom:1.5em
 }
+
+.user-input input{
+    border-radius: 0.8em;
+    border: none;
+    border: 1px solid #333;
+    width: 100%;
+}
+
 
 #messageInput {
     flex-grow: 1;

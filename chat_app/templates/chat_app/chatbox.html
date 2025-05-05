@@ -3,9 +3,10 @@
 {% block content%}
     <div class="chat-container">
         <div class="chat-messages" id="chatMessages"></div>
+        
         <div class="user-input">
             <input type="text" id="messageInput" name="user_message" placeholder="Type your message...">
-            <button type="button" id="sendButton" onclick="sendMessage()">Send</button>
+            <button type="button" id="sendButton" onclick="sendMessage()" hidden>Send</button>
         </div>
     </div>
 
