@@ -4,6 +4,21 @@
     --chat-background:#fff;
 }
 
+
+.select-tags-dropdown {
+    width: 100%;
+    font-size: 16px;
+    height: 30px;
+    padding: 1em 1em;
+    background: #eee;
+    border-radius: 6px;
+    color: #333;
+    margin-bottom: 10px;
+    cursor: pointer;
+    appearance: none;
+}
+
+
 .container {
     display: flex;
     align-items: center;

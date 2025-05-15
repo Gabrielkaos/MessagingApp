@@ -4,10 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'chat_app/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'chat_app/css/modal.css' %}">
     <title>Ask JulAi</title>
 </head>
 <body>
+
+    <div id="attendanceModal" class="modal" style="display: none;">
+        <span id="closeModalBtn" class="close">
+            <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#fff"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+        </span>
+
+        <div class="modal-content">
+            <h2 style="text-align: center" class="font-family-overall">Train Done</h2>
+            <form action="{% url 'chat_app:add' %}" method="post">
+                {% csrf_token %}
+                
+                <label for="tags">Select Tags</label>
+                <select class="select-tags-dropdown" id="tags" name="tags">
+                    {% for tag in tags %}
+                        <option value="{{tag}}">{{ tag }}</option>
+                    {% endfor %}
+                </select>
+
+                <label for="tag">or create new Tag</label>
+                <input type="text" name="tag" id="tag">
+
+                <label for="pattern">Pattern</label>
+                <input type="text" name="pattern">
+
+                <label for="response">Response</label>
+                <input type="text" name="response">
+
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </div>
     <div class="container">
         <div class="item">
             <div class="ai-title">
@@ -26,21 +59,40 @@
         </div>
 
         <div class="item">
-            <button>
-                ReTrain
-            </button>
-            <button>
+            <form action="{% url 'chat_app:train' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">
+                    Re train
+                </button>
+            </form>
+            
+           
+            <button id="openModalBtn">
                 Add Message - Response
             </button>
+            
         </div>
       </div>
-    <!-- <div  class="wrapper">
-        <div class="ai-image-container">
-            <img>
-        </div>
         
-    </div> -->
-   
+    <script src="{% static 'chat_app/js/modal.js' %}"></script>
+
+    
+
+    <!-- Select2 JS -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#tags").select2({
+                placeholder: "Select tags...",
+                closeOnSelect: false, // Keep dropdown open
+                allowClear: true,
+                width: "100%",
+                theme: "classic"
+            });
+        });
+    </script>
+    
     
     
 </body>
