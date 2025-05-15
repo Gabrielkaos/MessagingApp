@@ -1,0 +1,271 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "Good morning",
+        "Good afternoon",
+        "Good evening",
+        "What's up",
+        "How are you"
+      ],
+      "responses": [
+        "Hello I am julAi! Welcome to the College of Computer Science. How can I assist you today?",
+        "JulAi here! Ready to explore the College of Computer Science?",
+        "Greetings I am julAi! How can I help you with your college questions?"
+      ]
+    },
+    {
+      "tag": "faculty_info",
+      "patterns": [
+        "Who are the faculty members?",
+        "Tell me about the professors",
+        "List of faculty in Computer Science",
+        "Who teaches in the CS department?",
+        "Faculty information",
+        "Who are the CS professors?",
+        "Can you name the faculty?",
+        "Who are the teachers in Computer Science?"
+      ],
+      "responses": [
+        "The College of Computer Science has a team of dedicated faculty members. Some key professors include Sir Eleaczar Arma, Sir Michael Cruz, Sir Honorato Altar, and Sir Francis Claro Ahmed. Would you like more details about a specific professor?",
+        "Our faculty includes outstanding educators such as Sir Eleaczar Arma, Sir Michael Cruz, Sir Honorato Altar, and Sir Francis Claro Ahmed. Let me know if you'd like their contact information or office hours.",
+        "The CS department faculty consists of respected teachers like Sir Eleaczar Arma, Sir Michael Cruz, Sir Honorato Altar, and Sir Francis Claro Ahmed. Need any specific information about them?"
+      ]
+    },
+    {
+      "tag": "building_location",
+      "patterns": [
+        "Where is the Computer Science building?",
+        "Location of CS department",
+        "How to find the CS building?",
+        "Where are CS classes held?",
+        "Address of Computer Science college",
+        "Map of CS building",
+        "Directions to CS department",
+        "Where is the tech building?"
+      ],
+      "responses": [
+        "The Computer Science building, known as the New Building, is located near the College of Engineering and the College of Criminology. It's easy to spot once you're in that area.",
+        "You'll find the CS department in the New Building, situated between the College of Engineering and the College of Criminology. Let me know if you need detailed directions.",
+        "CS classes are primarily held in the New Building, conveniently located close to both the College of Engineering and the College of Criminology. Would you like help navigating there from your current location?"
+      ]
+    },
+    {
+      "tag": "first_year_courses",
+      "patterns": [
+        "What courses do first years take?",
+        "Freshman year courses in CS",
+        "1st year curriculum",
+        "Courses for first year CS students",
+        "What will I study in my first year?",
+        "Introductory CS courses",
+        "First semester courses",
+        "Beginner CS classes"
+      ],
+      "responses": [
+        "First-year students typically take: Introduction to Programming, Discrete Mathematics, Computer Systems Fundamentals, and a general education course. You'll also have a Freshman Seminar in CS.",
+        "The freshman curriculum includes: CS 101 (Programming Basics), CS 110 (Computational Thinking), MATH 150 (Discrete Structures), and a university writing requirement.",
+        "In your first year, you'll build foundations with: Programming I, Digital Logic Design, Calculus for CS, and an elective. Would you like the course descriptions?"
+      ]
+    },
+    {
+      "tag": "second_year_courses",
+      "patterns": [
+        "What courses do second years take?",
+        "Sophomore year courses",
+        "2nd year curriculum",
+        "Courses for second year CS students",
+        "What will I study in my second year?",
+        "Intermediate CS courses",
+        "Second year classes",
+        "200-level courses"
+      ],
+      "responses": [
+        "Second-year students typically take: Data Structures, Computer Architecture, Algorithms, and Probability for Computer Science. You'll also begin your specialization tracks.",
+        "The sophomore curriculum includes: CS 201 (Advanced Programming), CS 210 (Systems Programming), CS 220 (Theory of Computation), and your first track elective course.",
+        "In your second year, you'll dive deeper with: Object-Oriented Design, Operating Systems, Linear Algebra for CS, and your choice of specialization courses. Need details about any of these?"
+      ]
+    },
+    {
+      "tag": "specializations",
+      "patterns": [
+        "What specializations are available?",
+        "CS concentration areas",
+        "Majors in Computer Science",
+        "What tracks can I choose?",
+        "Different CS programs",
+        "Specialization options",
+        "Focus areas in CS",
+        "What are the CS majors?"
+      ],
+      "responses": [
+        "We offer five specializations: 1) Artificial Intelligence, 2) Cybersecurity, 3) Data Science, 4) Software Engineering, and 5) Computer Systems. You'll choose at the end of your second year.",
+        "Our concentration areas include: Game Development, Cloud Computing, Bioinformatics, Human-Computer Interaction, and Network Systems. Would you like details about any specific track?",
+        "You can specialize in: Machine Learning, Database Systems, Computer Graphics, or Embedded Systems. Each has unique course requirements and career paths."
+      ]
+    },
+    {
+      "tag": "lab_facilities",
+      "patterns": [
+        "What computer labs are available?",
+        "Lab facilities in CS department",
+        "Where can I work on projects?",
+        "Computer resources for students",
+        "Available tech labs",
+        "Where to code on campus?",
+        "24-hour computer access",
+        "Student workstations"
+      ],
+      "responses": [
+        "There are many computer labs located in the New Building, specifically ITlab1 to ITlab6. Each lab is equipped with plenty of computers for student use.",
+        "You can find several labs in the New Building, from ITlab1 to ITlab6, all offering numerous computers for your projects and coursework.",
+        "The New Building houses ITlab1 to ITlab6, providing many computers for students to work on. Feel free to visit any available lab during operating hours."
+      ]
+    },
+    {
+      "tag": "career_opportunities",
+      "patterns": [
+        "What jobs can I get with CS degree?",
+        "Career options for CS majors",
+        "Where do graduates work?",
+        "CS career paths",
+        "Employment after graduation",
+        "What companies hire CS students?",
+        "Internship opportunities",
+        "Job prospects in Computer Science"
+      ],
+      "responses": [
+        "Our graduates work at top tech companies like Google, Microsoft, and Amazon, as well as in finance, healthcare, and government sectors. Common roles include software engineer, data analyst, and systems architect.",
+        "With a CS degree, you can pursue careers in: app development, cybersecurity analysis, machine learning engineering, database administration, or game design. Our career center has more details.",
+        "Recent graduates have secured positions at Facebook, NASA, local startups, and research institutions. We also have strong internship pipelines with tech companies in the area."
+      ]
+    },
+    {
+      "tag": "research_opportunities",
+      "patterns": [
+        "How can I get involved in research?",
+        "Undergraduate research in CS",
+        "Research opportunities for students",
+        "Working with professors on research",
+        "How to join a research project?",
+        "CS research programs",
+        "Student research positions",
+        "Getting research experience"
+      ],
+      "responses": [
+        "Many professors take on undergraduate researchers. Check our department website for open positions, or talk to your professors after class about their ongoing projects.",
+        "We offer the CS Research Scholars program where students can work 10 hours/week on faculty projects. Applications open each semester. There are also summer research fellowships available.",
+        "First-years can start with the Introduction to Research seminar (CS 198). Many students present at our annual Undergraduate Research Symposium in their second year."
+      ]
+    },
+    {
+      "tag": "student_clubs",
+      "patterns": [
+        "What CS clubs are there?",
+        "Student organizations in Computer Science",
+        "Extracurricular activities for CS",
+        "How to meet other CS students?",
+        "Programming clubs",
+        "Tech student groups",
+        "Women in CS organization",
+        "Hackathon teams"
+      ],
+      "responses": [
+        "Two of the most common clubs are the Linux Users Group Club and the Chess Club. If you have a new idea, you're also welcome to create your own club!",
+        "Students often join the Linux Users Group Club and the Chess Club. You're free to start a new club if you want to bring students together around a shared interest.",
+        "The Linux Users Group Club and the Chess Club are popular among CS students, but you can also propose and create your own club if you have something new in mind."
+      ]
+    },
+    {
+      "tag": "advising",
+      "patterns": [
+        "How do I contact my advisor?",
+        "When is advising week?",
+        "Academic advising information",
+        "Need help choosing courses",
+        "How to change my schedule?",
+        "Who is my faculty advisor?",
+        "Advising appointment",
+        "Declaring a specialization"
+      ],
+      "responses": [
+        "First-year students are assigned a faculty advisor during orientation. You can schedule appointments through the Student Portal. Drop-in advising is available Tuesdays 1-3pm in the CS office.",
+        "Advising for course registration happens weeks 10-12 each semester. Your advisor's contact information is in your student profile. They can help with course selection and career planning."
+      ]
+    },
+    {
+      "tag": "graduation_requirements",
+      "patterns": [
+        "What do I need to graduate?",
+        "CS degree requirements",
+        "How many credits for CS major?",
+        "What classes are required?",
+        "Mandatory courses",
+        "Check my progress to degree",
+        "What's needed for BS in CS?",
+        "Graduation checklist"
+      ],
+      "responses": [
+        "The BS in CS requires 120 credits: 60 in major courses (including capstone), 30 in math/science, and 30 in general education. You'll need to complete a specialization track and maintain a 2.5 GPA in major courses.",
+        "Degree requirements include: 8 core CS courses, 5 track electives, 2 advanced math courses, the senior project, and university writing requirements. Your advisor can provide a personalized checklist.",
+        "You can track your progress in the Student Portal's Degree Audit system. It shows completed requirements and what's remaining for your CS degree."
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Goodbye",
+        "Bye",
+        "See you later",
+        "I have to go",
+        "Talk to you later",
+        "That's all for now",
+        "Thanks for your help",
+        "See you next time",
+        "Good bye"
+      ],
+      "responses": [
+        "Goodbye! Come back anytime with more questions about the College of Computer Science.",
+        "See you later! Good luck with your studies.",
+        "Bye for now! Remember the CS department is here to support you.",
+        "Until next time! Don't hesitate to ask if you have more questions."
+      ]
+    },
+    {
+      "tag": "who_are_you",
+      "patterns": [
+        "Who are you?",
+        "What is your name?",
+        "Who made you?",
+        "Tell me about yourself",
+        "What are you?",
+        "Are you a real person?"
+      ],
+      "responses": [
+        "I am julAi, a chatbot created to assist CCS students by answering frequently asked questions about the college.",
+        "My name is julAi. I was developed to help students of the College of Computer Science with their common questions and concerns.",
+        "I'm julAi, your virtual assistant for the College of Computer Science. I can help you with information about faculty, buildings, clubs, and more."
+      ]
+    },
+    {
+      "tag": "what_can_you_do",
+      "patterns": [
+        "What can you do?",
+        "How can you help me?",
+        "What services do you offer?",
+        "Can you assist me?",
+        "How do you help students?",
+        "What are your functions?"
+      ],
+      "responses": [
+        "I can provide information about the College of Computer Science, including faculty details, building locations, lab facilities, student clubs, and general FAQs.",
+        "I help answer common questions related to the College of Computer Science, such as faculty information, where buildings are located, available resources, and activities you can join.",
+        "My purpose is to assist CCS students by providing quick and accurate information about the college's facilities, faculty, activities, and general guidelines."
+      ]
+    }
+  ]
+}

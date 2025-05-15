@@ -1,5 +1,4 @@
-*.npz
-*ntents.json
+
 *.pyc
 chat_app/__pycache__/*
 chat_app/julAi/__pycache__/*
