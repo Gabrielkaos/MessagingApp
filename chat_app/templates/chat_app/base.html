@@ -12,6 +12,21 @@
     <title>Ask JulAi</title>
 </head>
 <body>
+    <div class="footer">
+        <form id="retrainForm" action="{% url 'chat_app:train' %}" method="post">
+            {% csrf_token %}
+            <!-- We'll trigger this form via JavaScript -->
+        </form>
+
+        <select id="footerDropdown" class="footer-button" onchange="handleFooterAction(this)">
+            <option value="" disabled selected>Settings</option>
+            <option value="retrain">Re train</option>
+            <option value="openModal">Add Message - Response</option>
+        </select>
+
+        <!-- Keep modal trigger button hidden -->
+        <button id="openModalBtn" class="footer-button" style="display: none;">Add Message - Response</button>
+    </div>
 
     <div id="attendanceModal" class="modal" style="display: none;">
         <span id="closeModalBtn" class="close">
@@ -46,27 +61,20 @@
 
 
 <div class="container">
-    <div class="header">
-        <div class="ai-title">
-            <img class="ai-image" src="{% static 'chat_app/img/smiling.png' %}" alt="AI Image">
-            <h1>JulAI</h1>
+    <div class="chat-header">
+        <div class="header">
+            <div class="ai-title">
+                <img class="ai-image" src="{% static 'chat_app/img/smiling.png' %}" alt="AI Image">
+                <hr class="ai-title-hr">
+                <h1>JulAI</h1>
+            </div>
+        </div>
+
+        <div class="content">
+            {% block content %}
+            {% endblock content %}
         </div>
     </div>
-
-    <div class="content">
-        {% block content %}
-        {% endblock content %}
-    </div>
-
-    <div class="footer">
-        <form action="{% url 'chat_app:train' %}" method="post">
-            {% csrf_token %}
-            <button type="submit" class="footer-button">Re train</button>
-        </form>
-
-        <button id="openModalBtn" class="footer-button">Add Message - Response</button>
-    </div>
-
 </div>
 <script src="{% static 'chat_app/js/modal.js' %}"></script>
 
@@ -86,6 +94,22 @@
                 theme: "classic"
             });
         });
+
+
+        function handleFooterAction(select) {
+            const value = select.value;
+
+            if (value === "retrain") {
+                document.getElementById("retrainForm").submit();
+            } else if (value === "openModal") {
+                document.getElementById("openModalBtn").click();
+            }
+
+            // Reset dropdown after action
+            select.selectedIndex = 0;
+        }
+
+
     </script>
     
     

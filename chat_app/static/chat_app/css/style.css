@@ -8,6 +8,7 @@
 /* Apply globally */
 body {
     font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
 }
 
 /* Specifically to chat */
@@ -18,6 +19,19 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.chat-header {
+    width: 50vw;
+}
+
+
+.ai-title-hr{
+    z-index: -100;
+    margin-top: -20px;
+    margin-bottom: 30px;
+    border: 1.5px solid #706edc; /* Violet border */
+    width: 400px;
+
+}
 
 /* Container setup */
 .container {
@@ -32,7 +46,22 @@ body {
     text-align: center;
     margin-bottom: 0px;
     margin-top: 10px;
+    box-shadow: 0 20px 10000px rgba(112, 110, 220, 0.6); 
+
+
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+    border: 2px solid #706edc;
+    padding: 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: none;
+
+ 
 }
+
+
 
 .ai-image {
     width: 80px;  /* Make the image smaller */
@@ -46,11 +75,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* Footer section (form and button) */
-.footer {
-    text-align: center;
-    margin-top: 20px;
-}
+
 
 h1{
     margin-bottom: 0px;
@@ -81,16 +106,17 @@ button:hover {
 /* Chat Container */
 .chat-container {
     width: 100%;
-    min-width: 600px;
-    max-width: 600px;
+    /* min-width: 600px;
+    max-width: 600px; */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     height: 80vh; /* Adjust height */
     background-color: #f0f0f0;
-    border-radius: 10px;
-    box-shadow: 0 8px 30px rgba(112, 110, 220, 0.6);  /* Wider purple shadow */
+    border-radius:0px 0px 10px 10px;
+    border-top: none !important;
+    box-shadow: 0 20px 10000px rgba(112, 110, 220, 0.6);  /* Wider purple shadow */
     overflow: hidden;
     border: 2px solid #706edc;  /* Border color updated */
 }
@@ -200,14 +226,17 @@ button:hover {
 
 
 .footer {
+    text-align: center;
+    margin-top: 0px;
     display: flex;
     gap: 12px;
     padding: 20px;
-    justify-content: center;
-    background-color: #f9f9f9;
-    border-top: 1px solid #e0e0e0;
-    box-shadow: 0 -4px 15px rgba(112, 110, 220, 0.2);
+    justify-content: right;
     font-family: 'Poppins', sans-serif;
+    position: sticky;
+    top: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 /* Buttons */
@@ -215,7 +244,7 @@ button:hover {
     background-color: #706edc;
     color: white;
     border: none;
-    border-radius: 25px;
+    border-radius: 5px;
     padding: 10px 18px;
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
