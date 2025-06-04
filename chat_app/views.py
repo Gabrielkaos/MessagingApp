@@ -8,6 +8,12 @@ import random
 import os
 from django.conf import settings
 
+nltk_data_dir = os.path.join(settings.BASE_DIR, 'chat_app', 'static', 'chat_app', 'julAi', 'nltk_data')
+
+
+os.makedirs(nltk_data_dir, exist_ok=True)
+nltk.data.path.insert(0, nltk_data_dir) 
+
 class TrainNet:
     def __init__(self, n_input, n_hidden, n_output, weight_scale=0.01, seed=None):
         if seed is not None:

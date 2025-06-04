@@ -1,8 +1,13 @@
 import nltk
 from nltk.stem import PorterStemmer
 import numpy as np
+import os
+from django.conf import settings
 
-nltk.download('punkt_tab')
+
+# Set custom NLTK data path
+
+# nltk.download('punkt_tab',download_dir=nltk_data_dir)
 #nltk_utils
 stemmer=PorterStemmer()
 
