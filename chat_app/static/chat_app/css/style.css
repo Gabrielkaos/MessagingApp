@@ -5,6 +5,8 @@
 } */
 
 
+
+
 /* Apply globally */
 body {
     font-family: 'Poppins', sans-serif;
@@ -39,6 +41,7 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
+    padding: 0px;
 }
 
 /* Header (image on top) */
@@ -106,21 +109,18 @@ button:hover {
 /* Chat Container */
 .chat-container {
     width: 100%;
-    /* min-width: 600px;
-    max-width: 600px; */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 80vh; /* Adjust height */
+    height: 70vh;
     background-color: #f0f0f0;
     border-radius:0px 0px 10px 10px;
     border-top: none !important;
-    box-shadow: 0 20px 10000px rgba(112, 110, 220, 0.6);  /* Wider purple shadow */
+    box-shadow: 0 20px 10000px rgba(112, 110, 220, 0.6); 
     overflow: hidden;
-    border: 2px solid #706edc;  /* Border color updated */
+    border: 2px solid #706edc;  
 }
-
 /* Chat Messages */
 .chat-messages {
     flex: 1;
@@ -153,18 +153,27 @@ button:hover {
     border: 10px solid #bbefd8 !important;
     border-radius: 20px !important;
     padding: 0px 3px 0px 3px ;
+    max-width: 75%;
+    
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal; 
+
 
 }
 
+
 /* Bot/AI message */
-.chat-messages .ai-message {
+.chat-messages .response-message {
     background-color: #d3e4db;
     color: #000;
     align-self: flex-start;
     border-bottom-left-radius: 0;
-    border: 10px solid #000000 !important;
-    border-radius: 20px !important;
-    padding: 0px 3px 0px 3px;
+    border: none;
+    border-radius: 20px;
+    padding:10px;
+    max-width: 75%;
+
 }
 
 /* User Input Section */
@@ -175,13 +184,19 @@ button:hover {
     padding: 10px;
     background-color: white;
     border-top: 1px solid #ddd;
-    box-shadow: 0 6px 20px rgba(112, 110, 220, 0.4);  /* Optional shadow */
+    box-shadow: 0 6px 20px rgba(112, 110, 220, 0.4);
     gap: 10px;
+
+    svg {
+        width: 25px;
+        height: 25px;
+        fill: #fff;
+    }
 }
 
 /* Text Input */
 .user-input input {
-    flex: 1;  /* Makes it take up all available space */
+    flex: 1; 
     padding: 10px 15px;
     border-radius: 20px;
     border: 1px solid #ddd;
@@ -190,8 +205,8 @@ button:hover {
 
 /* Send Button */
 .user-input button {
-    display: none; /* Hidden until needed */
-    background-color: #706edc;  /* Violet */
+    display: none;
+    background-color: #706edc;
     color: white;
     width: 45px;
     height: 45px;
@@ -203,6 +218,7 @@ button:hover {
     display: flex;
     align-items: center;   
     justify-content: center;
+    padding: 5px 0px 5px 1px;
 
     transition: background-color 0.3s ease;
 }
@@ -235,8 +251,11 @@ button:hover {
     font-family: 'Poppins', sans-serif;
     position: sticky;
     top: 0;
-    right: 0;
+    margin-right: -170vb !important;
     z-index: 1000;
+    margin-top: -70px;
+
+    
 }
 
 /* Buttons */
@@ -250,6 +269,12 @@ button:hover {
     font-size: 15px;
     box-shadow: 0 4px 10px rgba(112, 110, 220, 0.3);
     transition: background-color 0.3s ease;
+    max-width: 115px;
+    svg {
+        width: 20px;
+        height: 20px;
+        fill: #fff;
+    }
 }
 
 
