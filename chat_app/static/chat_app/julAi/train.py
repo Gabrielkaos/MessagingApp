@@ -18,7 +18,6 @@ class NumpyNeuralNet:
         return np.maximum(0, x)
 
     def forward(self, X):
-        # store for backprop
         self.z1 = X.dot(self.W1) + self.b1
         self.a1 = self.relu(self.z1)
         self.z2 = self.a1.dot(self.W2) + self.b2
@@ -27,33 +26,26 @@ class NumpyNeuralNet:
         return scores
 
     def backward(self, X, y, scores):
-        # softmax
         exp_scores = np.exp(scores - np.max(scores, axis=1, keepdims=True))
         probs = exp_scores / np.sum(exp_scores, axis=1, keepdims=True)
         N = X.shape[0]
 
-        # gradient on scores
         dscores = probs.copy()
         dscores[np.arange(N), y] -= 1
         dscores /= N
 
-        # grad W3, b3
         self.dW3 = self.a2.T.dot(dscores)
         self.db3 = np.sum(dscores, axis=0, keepdims=True)
 
-        # backprop into a2
         da2 = dscores.dot(self.W3.T)
         dz2 = da2 * (self.z2 > 0)
 
-        # grad W2, b2
         self.dW2 = self.a1.T.dot(dz2)
         self.db2 = np.sum(dz2, axis=0, keepdims=True)
 
-        # backprop into a1
         da1 = dz2.dot(self.W2.T)
         dz1 = da1 * (self.z1 > 0)
 
-        # grad W1, b1
         self.dW1 = X.T.dot(dz1)
         self.db1 = np.sum(dz1, axis=0, keepdims=True)
 
@@ -102,21 +94,17 @@ def save_data(file_path, model, all_words, tags):
 
 
 if __name__ == '__main__':
-    # Hyperparameters
     batch_size = 4
     n_hidden = 100
     lr = 2e-1
     num_epochs = 1000
 
-    # Load data
     X_train, y_train, tags, all_words = get_data_from_intents()
     n_input = X_train.shape[1]
     n_output = len(tags)
 
-    # Initialize model
     model = NumpyNeuralNet(n_input, n_hidden, n_output, seed=42, weight_scale=0.1)
 
-    # Training loop
     for epoch in range(1, num_epochs + 1):
         perm     = np.random.permutation(len(X_train))
         X_shuf   = X_train[perm]
@@ -127,15 +115,12 @@ if __name__ == '__main__':
             y_batch = y_shuf[i : i + batch_size]
             N       = X_batch.shape[0]
 
-            # forward pass
             scores = model.forward(X_batch)
 
-            # compute loss
             exp_scores = np.exp(scores - np.max(scores, axis=1, keepdims=True))
             probs      = exp_scores / np.sum(exp_scores, axis=1, keepdims=True)
             loss       = -np.mean(np.log(probs[np.arange(N), y_batch]))
 
-            # backward + update
             model.backward(X_batch, y_batch, scores)
             model.update_params(lr)
 
