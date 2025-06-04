@@ -5,10 +5,9 @@ import os
 from django.conf import settings
 
 
-# Set custom NLTK data path
 
 # nltk.download('punkt_tab',download_dir=nltk_data_dir)
-#nltk_utils
+# nltk_utils
 stemmer=PorterStemmer()
 
 def tokenize(sentence):

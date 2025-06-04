@@ -30,7 +30,6 @@ class TrainNet:
         return np.maximum(0, x)
 
     def forward(self, X):
-        # store for backprop
         self.z1 = X.dot(self.W1) + self.b1
         self.a1 = self.relu(self.z1)
         self.z2 = self.a1.dot(self.W2) + self.b2
@@ -75,7 +74,6 @@ class NumpyNeuralNet:
         if seed is not None:
             np.random.seed(seed)
         
-        # Initialize weights and biases
         self.W1 = np.random.randn(n_input,  n_hidden)  * weight_scale
         self.b1 = np.zeros((1, n_hidden))
         self.W2 = np.random.randn(n_hidden,  n_hidden)  * weight_scale
@@ -179,14 +177,14 @@ def response(request):
     bow = bag_of_words(stems, all_words)
     X = bow.reshape(1, -1)
 
-    # Forward pass
+    
     scores = model.forward(X)
     probs  = softmax(scores)
     pred_i = np.argmax(probs, axis=1)[0]
     tag     = tags[pred_i]
     confidence = probs[0, pred_i]
 
-    # Choose a response
+    
     print(confidence)
     if confidence > 0.75:
         for intent in intents['intents']:

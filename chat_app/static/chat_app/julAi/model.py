@@ -15,7 +15,6 @@ class NumpyNeuralNet:
         if seed is not None:
             np.random.seed(seed)
         
-        # Initialize weights and biases
         self.W1 = np.random.randn(n_input,  n_hidden)  * weight_scale
         self.b1 = np.zeros((1, n_hidden))
         self.W2 = np.random.randn(n_hidden,  n_hidden)  * weight_scale
@@ -29,23 +28,12 @@ class NumpyNeuralNet:
         return np.maximum(0, x)
 
     def forward(self, X):
-        """
-        Forward pass through the network.
         
-        Args:
-            X (np.ndarray): Input array of shape (batch_size, n_input).
-        
-        Returns:
-            np.ndarray: Output scores of shape (batch_size, n_output).
-        """
-        # Layer 1
         z1 = X.dot(self.W1) + self.b1
         a1 = self.relu(z1)
 
-        # Layer 2
         z2 = a1.dot(self.W2) + self.b2
         a2 = self.relu(z2)
 
-        # Output layer (no activation)
         out = a2.dot(self.W3) + self.b3
         return out
